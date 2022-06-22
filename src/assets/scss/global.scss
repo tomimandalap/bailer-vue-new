@@ -1,0 +1,13 @@
+@use 'sass:map';
+@import './config.scss';
+
+* {
+  font-family: $body-font-family;
+  text-decoration: none;
+}
+
+body {
+  background: map-get($color, light);
+  line-height: $line-heigth;
+  text-align: center;
+}
