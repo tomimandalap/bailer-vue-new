@@ -36,14 +36,14 @@ const picture = {
         .get(`search?query=nature`)
         .then((res) => {
           const result = res.data.photos
-          context.commit('setLoading', false)
+          // context.commit('setLoading', false)
           context.commit('setShow', false)
           context.commit('setDatas', result)
           return true
         })
         .catch((err) => {
           console.log(err.response)
-          context.commit('setLoading', false)
+          // context.commit('setLoading', false)
           context.commit('setShow', true)
           context.commit('setStatus', 'error')
           context.commit('setTitle', `[${err.response.status}]`)

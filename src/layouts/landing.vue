@@ -1,8 +1,7 @@
 <template>
   <div class="LayoutDefault">
-    <main class="LayoutDefault__main pa-4">
-      <h1>LANDING</h1>
-      <notifications position="top right" class="mt-5 mr-2" />
+    <main class="LayoutDefault__main" style="padding: 24px 80px">
+      <notifications position="top right" />
       <slot />
     </main>
   </div>
