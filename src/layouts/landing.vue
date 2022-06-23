@@ -1,6 +1,6 @@
 <template>
   <div class="LayoutDefault">
-    <main class="LayoutDefault__main">
+    <main class="LayoutDefault__main container mx-auto">
       <notifications position="top right" />
       <slot />
     </main>

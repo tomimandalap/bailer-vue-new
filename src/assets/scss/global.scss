@@ -2,7 +2,7 @@
 @import './config.scss';
 
 * {
-  font-family: $body-font-family;
+  // font-family: $body-font-family;
   text-decoration: none;
 }
 
@@ -11,40 +11,4 @@ body {
   line-height: $line-heigth;
   text-align: center;
   margin: 0 !important;
-}
-
-// >= lg, xl
-.LayoutDefault {
-  & .LayoutDefault__main {
-    max-width: 1399.98px;
-    margin: 0 auto;
-    padding: 0 52px;
-  }
-}
-
-// md
-@media (max-width: 991.98px) {
-  .LayoutDefault {
-    & .LayoutDefault__main {
-      padding: 0 48px;
-    }
-  }
-}
-
-// sm
-@media (max-width: 767.98px) {
-  .LayoutDefault {
-    & .LayoutDefault__main {
-      padding: 0 32px;
-    }
-  }
-}
-
-// xs
-@media (max-width: 575.98px) {
-  .LayoutDefault {
-    & .LayoutDefault__main {
-      padding: 0 8px;
-    }
-  }
 }

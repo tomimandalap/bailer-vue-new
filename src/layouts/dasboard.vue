@@ -1,8 +1,8 @@
 <template>
   <div class="LayoutDefault">
-    <main class="LayoutDefault__main pa-4">
+    <main class="LayoutDefault__main container mx-auto">
       <h1>DASBOARD</h1>
-      <notifications position="top right" class="mt-5 mr-2" />
+      <notifications position="top right" />
       <slot />
     </main>
   </div>

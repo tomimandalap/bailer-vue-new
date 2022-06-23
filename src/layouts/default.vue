@@ -1,6 +1,6 @@
 <template>
   <div class="LayoutDefault">
-    <main class="LayoutDefault__main pa-4">
+    <main class="LayoutDefault__main">
       <h1>DEFAULT</h1>
       <slot />
     </main>
