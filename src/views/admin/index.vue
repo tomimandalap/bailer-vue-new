@@ -1,6 +1,6 @@
 <template>
   <LayoutDasboard>
-    <div class="login">
+    <div class="bg-slate-300 h-full flex flex-row justify-center items-center">
       <h1>ADMIN</h1>
     </div>
   </LayoutDasboard>
