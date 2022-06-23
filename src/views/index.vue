@@ -102,7 +102,7 @@ export default {
       if (val) {
         const result = this.$loading({
           lock: true,
-          text: 'Loading',
+          text: 'Waiting',
           spinner: 'el-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)',
         })
