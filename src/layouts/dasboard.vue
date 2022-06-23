@@ -33,7 +33,7 @@
       </el-header>
 
       <notifications position="top right" />
-      <el-main>
+      <el-main class="container mx-auto">
         <slot />
       </el-main>
     </el-container>
