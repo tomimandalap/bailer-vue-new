@@ -2,7 +2,7 @@
   <LayoutDefault>
     <div class="h-screen flex flex-col justify-center items-center">
       <h2 class="">404 | Not Found</h2>
-      <router-link to="/">HOME</router-link>
+      <router-link to="/" class="hover:text-[red]">GOTO HOME</router-link>
     </div>
   </LayoutDefault>
 </template>
