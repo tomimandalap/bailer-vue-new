@@ -1,7 +1,7 @@
 <template>
   <LayoutDefault>
-    <div class="page-404">
-      <h2 class="page-404-title mb-3 text-dark">404 | Not Found</h2>
+    <div class="h-screen flex flex-col justify-center items-center">
+      <h2 class="">404 | Not Found</h2>
       <router-link to="/">HOME</router-link>
     </div>
   </LayoutDefault>

@@ -1,10 +1,9 @@
 <template>
-  <div class="LayoutDefault">
-    <main class="LayoutDefault__main">
-      <h1>DEFAULT</h1>
+  <el-container>
+    <el-main class="container mx-auto">
       <slot />
-    </main>
-  </div>
+    </el-main>
+  </el-container>
 </template>
 <script>
 export default {
