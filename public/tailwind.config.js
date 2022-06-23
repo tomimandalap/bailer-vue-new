@@ -21,7 +21,11 @@ tailwind.config = {
       blue: theme('colors.blue.500'),
       white: theme('colors.slate.100'),
     }),
-    extend: {},
+    extend: {
+      // backgroundImage(theme) => ({
+      //   'hero-pattern': "url('/src/assets/images/logo.png')",
+      // }),
+    },
   },
   corePlugins: {
     preflight: false,

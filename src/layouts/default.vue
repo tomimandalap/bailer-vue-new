@@ -1,9 +1,7 @@
 <template>
-  <el-container>
-    <el-main>
-      <slot />
-    </el-main>
-  </el-container>
+  <div>
+    <slot />
+  </div>
 </template>
 <script>
 export default {
