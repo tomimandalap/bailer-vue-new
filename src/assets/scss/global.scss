@@ -2,7 +2,7 @@
 @import './config.scss';
 
 * {
-  // font-family: $body-font-family;
+  font-family: $body-font-family !important;
   text-decoration: none;
 }
 

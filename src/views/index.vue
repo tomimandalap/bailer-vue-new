@@ -1,6 +1,6 @@
 <template>
   <LayoutLanding>
-    <h1>GALERY</h1>
+    <h1 class="font-bold">GALERY</h1>
 
     <el-input v-model="search" placeholder="Seaching by name">
       <el-button slot="append" icon="el-icon-search"></el-button>
