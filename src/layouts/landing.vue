@@ -1,6 +1,6 @@
 <template>
   <div class="LayoutDefault">
-    <main class="LayoutDefault__main" style="padding: 24px 80px">
+    <main class="LayoutDefault__main">
       <notifications position="top right" />
       <slot />
     </main>
