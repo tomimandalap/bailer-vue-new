@@ -1,12 +1,13 @@
 <template>
   <LayoutLanding>
     <div class="container mx-auto">
-      <h1 class="font-bold">GALERY</h1>
+      <h1 class="font-bold">GALERY {{ loading }}</h1>
 
       <el-input v-model="search" placeholder="Seaching by name">
         <el-button slot="append" icon="el-icon-search"></el-button>
       </el-input>
       <el-table
+        v-loading="loading"
         :data="
           datas.filter(
             (data) =>
@@ -59,9 +60,11 @@
 </template>
 <script>
 import LayoutLanding from '@/layouts/landing'
+import varmixin from '@/utils/varmixin'
 export default {
   name: 'Home',
   components: { LayoutLanding },
+  mixins: [varmixin],
   data() {
     return {
       search: '',
@@ -99,16 +102,10 @@ export default {
       this.$store.commit('pictures/setShow', false)
     },
     loading(val) {
-      if (val) {
-        const result = this.$loading({
-          lock: true,
-          text: 'Waiting',
-          spinner: 'el-icon-loading',
-          background: 'rgba(0, 0, 0, 0.7)',
-        })
+      if (val) this.overlay
 
-        result.close()
-      }
+      this.$store.commit('pictures/setLoading', false)
+      this.overlay.close()
     },
   },
   mounted() {
