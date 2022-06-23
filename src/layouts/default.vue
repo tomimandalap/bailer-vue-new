@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-main class="container mx-auto">
+    <el-main>
       <slot />
     </el-main>
   </el-container>

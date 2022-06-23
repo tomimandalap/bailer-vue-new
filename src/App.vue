@@ -5,8 +5,8 @@
       online-class="online"
       offline-class="offline"
     >
-      <router-view v-if="online" />
-      <DetectOffline v-else />
+      <DetectOffline v-if="!online" />
+      <router-view />
     </v-offline>
   </div>
 </template>

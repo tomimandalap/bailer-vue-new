@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header
-      class="flex justify-between items-center text-white bg-neutral-900 fixed top-0 left-0 w-full z-10"
+      class="flex justify-between items-center text-white bg-neutral-900"
     >
       <router-link to="/" class="text-white hover:text-[pink]">
         NAVBAR
