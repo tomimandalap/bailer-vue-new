@@ -3,32 +3,58 @@
     <div class="demo-image__preview">
       <h1>GALERY</h1>
 
-      <el-table :data="datas" height="500" style="width: 100%">
-        <el-table-column prop="id" label="ID" width="180"></el-table-column>
+      <el-input v-model="search" placeholder="Seaching by name">
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </el-input>
+      <el-table
+        :data="
+          datas.filter(
+            (data) =>
+              !search || data.alt.toLowerCase().includes(search.toLowerCase()),
+          )
+        "
+        stripe
+        height="500"
+        style="width: 100%"
+        lazy
+      >
+        <el-table-column prop="id" label="ID" width="100"></el-table-column>
+        <el-table-column prop="alt" label="Name" width="300"></el-table-column>
         <el-table-column
           prop="photographer"
           label="Photographer"
-          width="180"
-        ></el-table-column>
-        <el-table-column prop="src.small" label="Photo" align="right">
-          >
+          align="center"
+          width="200"
+        >
           <template slot-scope="scope">
-            <el-image
-              v-if="scope.row && scope.row.src"
-              style="width: 200px; height: 200px"
-              :src="scope.row.src.small"
-              :previewSrcList="[scope.row.src.large]"
-              fit="contain"
-              lazy
+            <el-tag
+              type="success"
+              effect="plain"
+              style="text-transform: capitalize"
             >
-              <div slot="error" class="image-slot">
-                <i class="el-icon-picture-outline"></i>
-              </div>
-              <div slot="placeholder" class="image-slot">
-                Loading
-                <span class="dot">...</span>
-              </div>
-            </el-image>
+              {{ scope.row && scope.row.photographer }}
+            </el-tag>
+          </template>
+        </el-table-column>
+        <el-table-column prop="src.small" label="Photo" align="center">
+          <template slot-scope="scope">
+            <div v-if="scope.row && scope.row.src">
+              <el-image
+                :src="scope.row.src.small"
+                :previewSrcList="[scope.row.src.large]"
+                style="width: 150px; height: 150px"
+                fit="contain"
+                lazy
+              >
+                <div slot="placeholder" class="image-slot">
+                  Loading
+                  <span class="dot">...</span>
+                </div>
+                <div slot="error" class="image-slot">
+                  <i class="el-icon-picture-outline"></i>
+                </div>
+              </el-image>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -41,7 +67,9 @@ export default {
   name: 'Home',
   components: { LayoutLanding },
   data() {
-    return {}
+    return {
+      search: '',
+    }
   },
   computed: {
     datas() {

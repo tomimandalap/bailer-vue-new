@@ -9,10 +9,11 @@ import './assets/scss/global.scss'
 import './plugins/vuenotify'
 import './plugins/vuelidate'
 import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/en'
 
 Axios() // running axios instance
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 
 new Vue({
   router,
