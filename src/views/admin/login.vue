@@ -1,15 +1,15 @@
 <template>
-  <LayoutDasboard>
+  <LayoutDefault>
     <div class="login">
       <h1>LOGIN</h1>
     </div>
-  </LayoutDasboard>
+  </LayoutDefault>
 </template>
 <script>
-import LayoutDasboard from '@/layouts/dasboard'
+import LayoutDefault from '@/layouts/default'
 export default {
   name: 'Home',
-  components: { LayoutDasboard },
+  components: { LayoutDefault },
   data() {
     return {}
   },

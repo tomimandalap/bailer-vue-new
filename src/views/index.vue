@@ -1,62 +1,60 @@
 <template>
   <LayoutLanding>
-    <h1 class="font-bold">GALERY</h1>
+    <div class="container mx-auto">
+      <h1 class="font-bold">GALERY</h1>
 
-    <el-input v-model="search" placeholder="Seaching by name">
-      <el-button slot="append" icon="el-icon-search"></el-button>
-    </el-input>
-    <el-table
-      :data="
-        datas.filter(
-          (data) =>
-            !search || data.alt.toLowerCase().includes(search.toLowerCase()),
-        )
-      "
-      stripe
-      height="500"
-      style="width: 100%"
-      lazy
-    >
-      <el-table-column prop="id" label="ID" width="100"></el-table-column>
-      <el-table-column prop="alt" label="Name" width="300"></el-table-column>
-      <el-table-column
-        prop="photographer"
-        label="Photographer"
-        align="center"
-        width="200"
+      <el-input v-model="search" placeholder="Seaching by name">
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </el-input>
+      <el-table
+        :data="
+          datas.filter(
+            (data) =>
+              !search || data.alt.toLowerCase().includes(search.toLowerCase()),
+          )
+        "
       >
-        <template slot-scope="scope">
-          <el-tag
-            type="success"
-            effect="plain"
-            style="text-transform: capitalize"
-          >
-            {{ scope.row && scope.row.photographer }}
-          </el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column prop="src.small" label="Photo" align="center">
-        <template slot-scope="scope">
-          <div v-if="scope.row && scope.row.src">
-            <el-image
-              :src="scope.row.src.small"
-              :previewSrcList="[scope.row.src.large]"
-              style="width: 150px; height: 150px"
-              fit="contain"
-              lazy
+        <el-table-column prop="id" label="ID" width="100"></el-table-column>
+        <el-table-column prop="alt" label="Name" width="300"></el-table-column>
+        <el-table-column
+          prop="photographer"
+          label="Photographer"
+          align="center"
+          width="200"
+        >
+          <template slot-scope="scope">
+            <el-tag
+              type="success"
+              effect="plain"
+              style="text-transform: capitalize"
             >
-              <div slot="placeholder" class="image-slot">
-                Loading
-                <span class="dot">...</span>
-              </div>
-              <div slot="error" class="image-slot">
-                <i class="el-icon-picture-outline"></i>
-              </div>
-            </el-image>
-          </div>
-        </template>
-      </el-table-column>
-    </el-table>
+              {{ scope.row && scope.row.photographer }}
+            </el-tag>
+          </template>
+        </el-table-column>
+        <el-table-column prop="src.small" label="Photo" align="center">
+          <template slot-scope="scope">
+            <div v-if="scope.row && scope.row.src">
+              <el-image
+                :src="scope.row.src.small"
+                :previewSrcList="[scope.row.src.large]"
+                style="width: 150px; height: 150px"
+                fit="contain"
+                lazy
+              >
+                <div slot="placeholder" class="image-slot">
+                  Loading
+                  <span class="dot">...</span>
+                </div>
+                <div slot="error" class="image-slot">
+                  <i class="el-icon-picture-outline"></i>
+                </div>
+              </el-image>
+            </div>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
   </LayoutLanding>
 </template>
 <script>
